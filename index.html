@@ -1,113 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POLS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        margin: 0;
-        background-color: white;
-        font-family: 'Patrick Hand', cursive;
-        color: black;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>POLS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: white;
+      font-family: 'Patrick Hand', cursive;
+      color: black;
+    }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
-        padding: 0.5rem 1rem;
-      }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid black;
+      padding: 0.5rem 1rem;
+    }
 
-      nav {
-        display: flex;
-        gap: 2rem;
-        position: relative;
-      }
+    nav {
+      display: flex;
+      gap: 2rem;
+      position: relative;
+    }
 
-      nav a {
-        color: black;
-        text-decoration: none;
-        font-size: 1.2rem;
-        font-weight: bold;
-        position: relative;
-      }
+    nav a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      position: relative;
+    }
 
-      .dropdown {
-        position: relative;
-      }
+    .dropdown {
+      position: relative;
+    }
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        border: 1px solid black;
-        padding: 0.5rem;
-        top: 2rem;
-        left: 0;
-        z-index: 10;
-        flex-direction: column;
-        gap: 0.5rem;
-        min-width: 120px;
-      }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid black;
+      padding: 0.5rem;
+      top: 2rem;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+      gap: 0.5rem;
+      min-width: 120px;
+    }
 
-      .dropdown-content a {
-        font-size: 1rem;
-        font-weight: normal;
-      }
+    .dropdown-content a {
+      font-size: 1rem;
+      font-weight: normal;
+    }
 
-      .dropdown:hover .dropdown-content {
-        display: flex;
-      }
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
 
-      .logo-center {
-        text-align: center;
-        padding: 4rem 1rem 2rem 1rem;
-      }
+    .logo-center {
+      text-align: center;
+      padding: 4rem 1rem 2rem 1rem;
+    }
 
-      .logo-center h1 {
-        font-family: 'Anton', sans-serif; /* Simula Printvetica */
-        font-size: 9rem;
-        margin: 0;
-        letter-spacing: -2px;
-      }
+    .logo-center h1 {
+      font-family: 'Anton', sans-serif;
+      font-size: 9rem;
+      margin: 0;
+      letter-spacing: -2px;
+    }
 
-      .logo-center img {
-        width: 100px;
-        margin: 2rem auto;
-        display: block;
-      }
+    .pictograma {
+      width: 100px;
+      margin: 2rem auto;
+      display: block;
+      animation: mover 3s infinite ease-in-out;
+    }
 
-      .logo-center h2 {
-        font-size: 3rem;
-        margin-top: 1rem;
-        font-weight: normal;
+    @keyframes mover {
+      0% {
+        transform: rotate(0deg) scale(1);
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div><strong>POLS</strong></div>
-      <nav>
-        <div class="dropdown">
-          <a href="#">SHOP ONLINE</a>
-          <div class="dropdown-content">
-            <a href="#">Remera</a>
-            <a href="#">Pantalón</a>
-          </div>
+      25% {
+        transform: rotate(-15deg) scale(1.05);
+      }
+      50% {
+        transform: rotate(15deg) scale(1);
+      }
+      75% {
+        transform: rotate(-10deg) scale(1.05);
+      }
+      100% {
+        transform: rotate(0deg) scale(1);
+      }
+    }
+
+    .logo-center h2 {
+      font-size: 3rem;
+      margin-top: 1rem;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>POLS</strong></div>
+    <nav>
+      <div class="dropdown">
+        <a href="#">SHOP ONLINE</a>
+        <div class="dropdown-content">
+          <a href="#">Remera</a>
+          <a href="#">Pantalón</a>
         </div>
-        <a href="#">GUÍA DE TALLES</a>
-      </nav>
-    </header>
+      </div>
+      <a href="#">GUÍA DE TALLES</a>
+    </nav>
+  </header>
 
-    <div class="logo-center">
-      <h1>POLS</h1>
-      <img src="https://raw.githubusercontent.com/Polero7070/pols/main/public/pictograma.png" alt="Pictograma POLS">
-      <h2>¿DÓNDE ESTÁ POLS?</h2>
-    </div>
-
-  </body>
+  <div class="logo-center">
+    <h1>POLS</h1>
+    <img class="pictograma" src="https://raw.githubusercontent.com/Polero7070/pols/main/public/pictograma.png" alt="Pictograma POLS">
+    <h2>¿DÓNDE ESTÁ POLS?</h2>
+  </div>
+</body>
 </html>
