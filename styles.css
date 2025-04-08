@@ -1,8 +1,84 @@
-.@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-.animate-marquee {
-  display: inline-block;
-  animation: marquee 15s linear infinite;
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-white text-black cursor-custom">
+      <header className="flex justify-between items-center px-6 py-4">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="text-xl font-bold tracking-tight"
+        >
+          SINCE MY MIND
+        </motion.div>
+
+        <nav className="flex gap-6 text-base">
+          <div className="relative group">
+            <span className="cursor-pointer">SHOP ONLINE</span>
+            <div className="absolute left-0 mt-2 hidden group-hover:block bg-white text-black border shadow-lg rounded-md p-2 space-y-1 z-50">
+              <div className="group relative">
+                <span className="cursor-pointer">REMERAS</span>
+                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
+                  <span className="block cursor-pointer">REMERAS MANGA LARGA</span>
+                </div>
+              </div>
+              <div className="group relative">
+                <span className="cursor-pointer">PANTALONES</span>
+                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
+                  <span className="block cursor-pointer">JEANS</span>
+                  <span className="block cursor-pointer">JOGGINGS</span>
+                </div>
+              </div>
+              <span className="block cursor-pointer">BUZO</span>
+              <span className="block cursor-pointer">CAMPERAS</span>
+              <div className="group relative">
+                <span className="cursor-pointer">ACCESORIOS</span>
+                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
+                  <span className="block cursor-pointer">GUANTES</span>
+                  <span className="block cursor-pointer">GORROS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span className="cursor-pointer">GUÍA DE TALLES</span>
+        </nav>
+      </header>
+
+      <main className="flex flex-col items-center justify-center h-[calc(100vh-100px)] text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-[120px] md:text-[160px] font-black mb-6 tracking-tight printvetica"
+        >
+          POLS
+        </motion.h1>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-3xl md:text-5xl font-medium"
+        >
+          ¿DÓNDE ESTÁ POLS?
+        </motion.h2>
+      </main>
+
+      <style jsx global>{`
+        @font-face {
+          font-family: 'Printvetica';
+          src: url('/fonts/Printvetica.woff2') format('woff2');
+        }
+
+        .printvetica {
+          font-family: 'Printvetica', sans-serif;
+        }
+
+        .cursor-custom {
+          cursor: url('/cursor.png'), auto;
+        }
+      `}</style>
+    </div>
+  );
 }
