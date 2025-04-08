@@ -1,140 +1,204 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>POLS</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLS – WHERE IS POLS?</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/Polero7070/POLSMYMIND/ab7c602d7ff2b30cdbeb64461746155944bf1eee/Untitled-3.svg">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: black;
+      color: white;
+      cursor: url('https://raw.githubusercontent.com/Polero7070/POLSMYMIND/8e68cd4bcc391d14328dcd7a87feedb03f432e81/Untitled-4.svg'), auto;
+    }
 
-    <!-- Fuente Printvetica -->
-    <style>
-      @font-face {
-        font-family: 'Printvetica';
-        src: url('https://raw.githubusercontent.com/Polero7070/pols/main/public/fonts/Printvetica.woff2') format('woff2');
-        font-weight: normal;
-        font-style: normal;
-      }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
 
-      body {
-        margin: 0;
-        background-color: white;
-        font-family: 'Arial', sans-serif;
-        color: black;
-        overflow-x: hidden;
-      }
+    h1 {
+      font-size: 48px;
+      animation: float 2s ease-in-out infinite;
+      color: yellow;
+    }
 
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
-        padding: 1rem 2rem;
-        position: relative;
-      }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-      .since-my-mind {
-        font-weight: bold;
-        font-size: 1.3rem;
-        animation: slideLeftRight 3s ease-in-out infinite alternate;
-      }
+    nav {
+      background-color: #111;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-      @keyframes slideLeftRight {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(10px); }
-      }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
 
-      nav {
-        display: flex;
-        gap: 2rem;
-        position: relative;
-      }
+    nav ul li a {
+      color: yellow;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-      nav a {
-        color: black;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: bold;
-      }
+    #shop {
+      padding: 60px 20px;
+      text-align: center;
+    }
 
-      .dropdown {
-        position: relative;
-      }
+    #shop h3 {
+      font-size: 36px;
+      color: yellow;
+      margin-bottom: 40px;
+    }
 
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: white;
-        border: 1px solid black;
-        padding: 0.5rem;
-        top: 2rem;
-        left: 0;
-        z-index: 10;
-        flex-direction: column;
-        gap: 0.5rem;
-        min-width: 120px;
-      }
+    .productos {
+      margin-bottom: 80px;
+    }
 
-      .dropdown-content a {
-        font-size: 1rem;
-        font-weight: normal;
-      }
+    .productos h4 {
+      font-size: 28px;
+      color: white;
+      margin: 80px 0 20px;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 1px solid yellow;
+      padding-bottom: 10px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-      .dropdown:hover .dropdown-content {
-        display: flex;
-      }
+    .producto {
+      display: inline-block;
+      margin: 20px;
+    }
 
-      .logo-center {
-        text-align: center;
-        padding: 6rem 1rem 2rem 1rem;
-      }
+    .producto img {
+      width: 300px;
+      height: auto;
+      border: 1px solid yellow;
+      border-radius: 10px;
+    }
 
-      .logo-center h1 {
-        font-family: 'Printvetica', sans-serif;
-        font-size: 9rem;
-        margin: 0;
-        letter-spacing: -2px;
-      }
+    .producto p {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 onclick="document.getElementById('shop').scrollIntoView({ behavior: 'smooth' })">WHERE IS POLS?</h1>
+  </header>
 
-      .logo-center h2 {
-        font-size: 3rem;
-        margin-top: 1.5rem;
-        font-weight: normal;
-      }
+  <nav>
+    <ul>
+      <li><a href="#remeras">Remeras</a></li>
+      <li><a href="#buzos">Buzos</a></li>
+      <li><a href="#joggings">Joggings</a></li>
+      <li><a href="#camisas">Camisas</a></li>
+      <li><a href="#camperas">Camperas</a></li>
+      <li><a href="#blazers">Blazers</a></li>
+      <li><a href="#guantes">Guantes</a></li>
+      <li><a href="#gorros">Gorros</a></li>
+      <li><a href="#accesorios">Accesorios</a></li>
+    </ul>
+  </nav>
 
-      .logo-center img {
-        width: 120px;
-        margin: 3rem auto 0 auto;
-        display: block;
-        animation: rotateArms 2s infinite ease-in-out;
-      }
+  <section id="shop">
+    <h3>SHOP ONLINE</h3>
 
-      @keyframes rotateArms {
-        0% { transform: rotate(0deg); }
-        25% { transform: rotate(-10deg); }
-        50% { transform: rotate(10deg); }
-        75% { transform: rotate(-10deg); }
-        100% { transform: rotate(0deg); }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="since-my-mind">SINCE MY MIND</div>
-      <nav>
-        <div class="dropdown">
-          <a href="#">SHOP ONLINE</a>
-          <div class="dropdown-content">
-            <a href="#">Remera</a>
-            <a href="#">Pantalón</a>
-          </div>
-        </div>
-        <a href="#">GUÍA DE TALLES</a>
-      </nav>
-    </header>
+    <section id="remeras" class="productos">
+      <h4>Remeras</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Remera+1" alt="Remera 1">
+        <p>Remera POLS Amarilla</p>
+      </div>
+    </section>
 
-    <div class="logo-center">
-      <h1>POLS</h1>
-      <img src="https://raw.githubusercontent.com/Polero7070/pols/main/public/pictograma.png" alt="Pictograma POLS" />
-      <h2>¿DÓNDE ESTÁ POLS?</h2>
-    </div>
-  </body>
+    <section id="buzos" class="productos">
+      <h4>Buzos</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Buzo+1" alt="Buzo 1">
+        <p>Buzo Oversize Bordado</p>
+      </div>
+    </section>
+
+    <section id="joggings" class="productos">
+      <h4>Joggings</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Jogging+1" alt="Jogging 1">
+        <p>Jogging POLS Gris</p>
+      </div>
+    </section>
+
+    <section id="camisas" class="productos">
+      <h4>Camisas</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Camisa+1" alt="Camisa 1">
+        <p>Camisa Oversize Estampada</p>
+      </div>
+    </section>
+
+    <section id="camperas" class="productos">
+      <h4>Camperas</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Campera+1" alt="Campera 1">
+        <p>Campera Estilo Cargo</p>
+      </div>
+    </section>
+
+    <section id="blazers" class="productos">
+      <h4>Blazers</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Blazer+1" alt="Blazer 1">
+        <p>Blazer POLS Experimental</p>
+      </div>
+    </section>
+
+    <section id="guantes" class="productos">
+      <h4>Guantes</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Guantes+1" alt="Guantes 1">
+        <p>Guantes Intervenidos</p>
+      </div>
+    </section>
+
+    <section id="gorros" class="productos">
+      <h4>Gorros</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Gorro+1" alt="Gorro 1">
+        <p>Gorro POLS Negro</p>
+      </div>
+    </section>
+
+    <section id="accesorios" class="productos">
+      <h4>Accesorios</h4>
+      <div class="producto">
+        <img src="https://via.placeholder.com/300x400?text=Accesorio+1" alt="Accesorio 1">
+        <p>Tote Bag POLS</p>
+      </div>
+    </section>
+  </section>
+</body>
 </html>
