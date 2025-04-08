@@ -19,8 +19,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 2px dashed white;
+        border-bottom: 2px solid transparent;
         padding: 0.5rem 1rem;
+        position: relative;
       }
       nav {
         display: flex;
@@ -35,33 +36,40 @@
       .filters {
         display: flex;
         justify-content: space-between;
-        border-bottom: 2px dashed white;
+        border-bottom: 2px solid transparent;
         padding: 1rem;
         font-size: 1.2rem;
       }
       .filters span {
         color: white;
       }
-      .product-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1rem;
-        padding: 2rem;
+      .logo-center {
+        text-align: center;
+        padding: 3rem 1rem 1rem 1rem;
       }
-      .product {
-        border: 2px dashed white;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 300px;
-        color: white;
+      .logo-center h1 {
+        font-size: 5rem;
+        margin: 0;
+      }
+      .logo-center img {
+        width: 90px;
+        margin: 1.5rem auto;
+        display: block;
+      }
+      .logo-center h2 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        font-weight: normal;
+      }
+      .sketch-line {
+        border-image: url('https://svgshare.com/i/15Y4.svg') 10 stretch;
+        border-width: 2px;
+        border-style: solid;
       }
     </style>
   </head>
   <body>
-    <header>
+    <header class="sketch-line">
       <div><strong>POLS</strong></div>
       <nav>
         <a href="#">COMERCIO</a>
@@ -73,15 +81,17 @@
       </nav>
     </header>
 
-    <div class="filters">
+    <div class="logo-center">
+      <h1>POLS</h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Iconic_image_placeholder.svg/1024px-Iconic_image_placeholder.svg.png" alt="Pictograma POLS">
+      <h2>¿DÓNDE ESTÁ POLS?</h2>
+    </div>
+
+    <div class="filters sketch-line">
       <span>Filtrar +</span>
       <span>Clasificar ▼</span>
     </div>
 
-    <div class="product-grid">
-      <div class="product">PRODUCTO 1</div>
-      <div class="product">PRODUCTO 2</div>
-      <div class="product">PRODUCTO 3</div>
-    </div>
   </body>
 </html>
+
