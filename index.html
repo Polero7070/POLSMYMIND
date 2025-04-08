@@ -1,84 +1,113 @@
-import React from "react";
-import { motion } from "framer-motion";
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POLS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        margin: 0;
+        background-color: white;
+        font-family: 'Patrick Hand', cursive;
+        color: black;
+      }
 
-export default function Home() {
-  return (
-    <div className="min-h-screen bg-white text-black cursor-custom">
-      <header className="flex justify-between items-center px-6 py-4">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="text-xl font-bold tracking-tight"
-        >
-          SINCE MY MIND
-        </motion.div>
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid black;
+        padding: 0.5rem 1rem;
+      }
 
-        <nav className="flex gap-6 text-base">
-          <div className="relative group">
-            <span className="cursor-pointer">SHOP ONLINE</span>
-            <div className="absolute left-0 mt-2 hidden group-hover:block bg-white text-black border shadow-lg rounded-md p-2 space-y-1 z-50">
-              <div className="group relative">
-                <span className="cursor-pointer">REMERAS</span>
-                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
-                  <span className="block cursor-pointer">REMERAS MANGA LARGA</span>
-                </div>
-              </div>
-              <div className="group relative">
-                <span className="cursor-pointer">PANTALONES</span>
-                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
-                  <span className="block cursor-pointer">JEANS</span>
-                  <span className="block cursor-pointer">JOGGINGS</span>
-                </div>
-              </div>
-              <span className="block cursor-pointer">BUZO</span>
-              <span className="block cursor-pointer">CAMPERAS</span>
-              <div className="group relative">
-                <span className="cursor-pointer">ACCESORIOS</span>
-                <div className="absolute left-full top-0 mt-0 hidden group-hover:block bg-white border shadow-lg rounded-md p-2 space-y-1 z-50">
-                  <span className="block cursor-pointer">GUANTES</span>
-                  <span className="block cursor-pointer">GORROS</span>
-                </div>
-              </div>
-            </div>
+      nav {
+        display: flex;
+        gap: 2rem;
+        position: relative;
+      }
+
+      nav a {
+        color: black;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        position: relative;
+      }
+
+      .dropdown {
+        position: relative;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid black;
+        padding: 0.5rem;
+        top: 2rem;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-width: 120px;
+      }
+
+      .dropdown-content a {
+        font-size: 1rem;
+        font-weight: normal;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+
+      .logo-center {
+        text-align: center;
+        padding: 4rem 1rem 2rem 1rem;
+      }
+
+      .logo-center h1 {
+        font-family: 'Anton', sans-serif; /* Simula Printvetica */
+        font-size: 9rem;
+        margin: 0;
+        letter-spacing: -2px;
+      }
+
+      .logo-center img {
+        width: 100px;
+        margin: 2rem auto;
+        display: block;
+      }
+
+      .logo-center h2 {
+        font-size: 3rem;
+        margin-top: 1rem;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>POLS</strong></div>
+      <nav>
+        <div class="dropdown">
+          <a href="#">SHOP ONLINE</a>
+          <div class="dropdown-content">
+            <a href="#">Remera</a>
+            <a href="#">Pantalón</a>
           </div>
-          <span className="cursor-pointer">GUÍA DE TALLES</span>
-        </nav>
-      </header>
+        </div>
+        <a href="#">GUÍA DE TALLES</a>
+      </nav>
+    </header>
 
-      <main className="flex flex-col items-center justify-center h-[calc(100vh-100px)] text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-[120px] md:text-[160px] font-black mb-6 tracking-tight printvetica"
-        >
-          POLS
-        </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="text-3xl md:text-5xl font-medium"
-        >
-          ¿DÓNDE ESTÁ POLS?
-        </motion.h2>
-      </main>
-
-      <style jsx global>{`
-        @font-face {
-          font-family: 'Printvetica';
-          src: url('/fonts/Printvetica.woff2') format('woff2');
-        }
-
-        .printvetica {
-          font-family: 'Printvetica', sans-serif;
-        }
-
-        .cursor-custom {
-          cursor: url('/cursor.png'), auto;
-        }
-      `}</style>
+    <div class="logo-center">
+      <h1>POLS</h1>
+      <img src="https://raw.githubusercontent.com/Polero7070/pols/main/public/pictograma.png" alt="Pictograma POLS">
+      <h2>¿DÓNDE ESTÁ POLS?</h2>
     </div>
-  );
-}
+
+  </body>
+</html>
